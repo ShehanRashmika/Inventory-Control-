@@ -1,0 +1,131 @@
+18/11/16 02:41:50 INFO common.Version: HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+18/11/16 02:41:50 INFO hibernate.Version: HHH000412: Hibernate Core {4.3.1.Final}
+18/11/16 02:41:50 INFO cfg.Environment: HHH000206: hibernate.properties not found
+18/11/16 02:41:50 INFO cfg.Environment: HHH000021: Bytecode provider name : javassist
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+18/11/16 02:41:50 WARN xml.DTDEntityResolver: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/EmployeeType.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/SupAndVendorCompanyDetails.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/Employee.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/Stock.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/VendorReturn.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/Grn.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/GrnHasItems.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/ReturnToSupplier.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/InvoiceVen.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/CusReturn.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/MyCompanyDetails.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/InvoiceHasItemsCus.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/Unit.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/Privileges.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/Customer.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/InvoiceCus.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/Supplier.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/InvoiceHasItemsVen.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/Login.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/Product.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/ProductType.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/Vendor.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000221: Reading mappings from resource: Pojos/ProductBrand.hbm.xml
+18/11/16 02:41:50 INFO cfg.Configuration: HHH000041: Configured SessionFactory: null
+18/11/16 02:41:51 WARN internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+18/11/16 02:41:51 INFO internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3307/inventorymanagement?zeroDateTimeBehavior=convertToNull]
+18/11/16 02:41:51 INFO internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {useUnicode=true, user=root, password=****, CharSet=utf8, characterEncoding=utf8}
+18/11/16 02:41:51 INFO internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+18/11/16 02:41:51 INFO internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+18/11/16 02:41:51 INFO dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+18/11/16 02:41:51 INFO internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+18/11/16 02:41:51 INFO ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+net.sf.jasperreports.engine.JRException: java.io.FileNotFoundException: file:\C:\Users\Sheha\Documents\NetBeansProjects\InventoryManagementSystem\dist\InventoryManagementSystem.jar!\Reports\barodeReport.jrxml (The filename, directory name, or volume label syntax is incorrect)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:222)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:193)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:184)
+	at net.sf.jasperreports.engine.JasperCompileManager.compile(JasperCompileManager.java:285)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:572)
+	at Panels.StockManagement.productAdd_btnPrintMouseClicked(StockManagement.java:2000)
+	at Panels.StockManagement.access$1500(StockManagement.java:75)
+	at Panels.StockManagement$15.mouseClicked(StockManagement.java:528)
+	at java.awt.Component.processMouseEvent(Component.java:6538)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4534)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: java.io.FileNotFoundException: file:\C:\Users\Sheha\Documents\NetBeansProjects\InventoryManagementSystem\dist\InventoryManagementSystem.jar!\Reports\barodeReport.jrxml (The filename, directory name, or volume label syntax is incorrect)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:217)
+	... 38 more
+net.sf.jasperreports.engine.JRException: java.io.FileNotFoundException: file:\C:\Users\Sheha\Documents\NetBeansProjects\InventoryManagementSystem\dist\InventoryManagementSystem.jar!\Reports\barodeReport.jrxml (The filename, directory name, or volume label syntax is incorrect)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:222)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:193)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:184)
+	at net.sf.jasperreports.engine.JasperCompileManager.compile(JasperCompileManager.java:285)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:572)
+	at Panels.StockManagement.productAdd_btnPrintMouseClicked(StockManagement.java:2000)
+	at Panels.StockManagement.access$1500(StockManagement.java:75)
+	at Panels.StockManagement$15.mouseClicked(StockManagement.java:528)
+	at java.awt.Component.processMouseEvent(Component.java:6538)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4534)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: java.io.FileNotFoundException: file:\C:\Users\Sheha\Documents\NetBeansProjects\InventoryManagementSystem\dist\InventoryManagementSystem.jar!\Reports\barodeReport.jrxml (The filename, directory name, or volume label syntax is incorrect)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:217)
+	... 38 more

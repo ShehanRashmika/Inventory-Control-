@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2018 10:52:25 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.Unit" table="unit" catalog="inventorymanagement" optimistic-lock="version">
+        <id name="idunit" type="java.lang.Integer">
+            <column name="idunit" />
+            <generator class="identity" />
+        </id>
+        <property name="unit" type="string">
+            <column name="unit" length="45" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="150" />
+        </property>
+        <set name="products" table="product" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="unit_idunit" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.Product" />
+        </set>
+    </class>
+</hibernate-mapping>

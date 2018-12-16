@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="grn_inventory" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f03ab157-4a3f-4079-a60c-3383e11895ad">
+	<property name="ireport.zoom" value="1.9487171000000034"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="204"/>
+	<parameter name="company_logo" class="java.lang.String"/>
+	<parameter name="company_name" class="java.lang.String"/>
+	<parameter name="company_email" class="java.lang.String"/>
+	<parameter name="company_tp" class="java.lang.String"/>
+	<parameter name="company_address" class="java.lang.String"/>
+	<parameter name="company_website" class="java.lang.String"/>
+	<parameter name="grn_id" class="java.lang.String"/>
+	<parameter name="grn_date" class="java.lang.String"/>
+	<parameter name="sup_name" class="java.lang.String"/>
+	<parameter name="sup_company" class="java.lang.String"/>
+	<parameter name="grn_sub_tot" class="java.lang.String"/>
+	<parameter name="grn_dis" class="java.lang.String"/>
+	<parameter name="grn_tax" class="java.lang.String"/>
+	<parameter name="grn_tot" class="java.lang.String"/>
+	<parameter name="grn_payment" class="java.lang.String"/>
+	<parameter name="grn_bal" class="java.lang.String"/>
+	<parameter name="grn_status" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Sheha\\Documents\\NetBeansProjects\\InventoryManagementSystem\\src\\Reports\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="Stock ID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Product" class="java.lang.String"/>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Exp Date" class="java.lang.String"/>
+	<field name="Qty" class="java.lang.String"/>
+	<field name="Unit Price" class="java.lang.String"/>
+	<field name="Dis" class="java.lang.String"/>
+	<field name="Tax" class="java.lang.String"/>
+	<field name="U.B Price" class="java.lang.String"/>
+	<field name="U.S Price" class="java.lang.String"/>
+	<field name="Sub Tot" class="java.lang.String"/>
+	<field name="Total" class="java.lang.String"/>
+	<title>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="1" width="552" height="96" backcolor="#66FFCC" uuid="c6d6389c-91fc-435d-98f0-9745dacb0805"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<image>
+				<reportElement x="9" y="11" width="139" height="77" uuid="5c46448e-9936-43a7-8658-10826450cc06"/>
+				<imageExpression><![CDATA[$P{company_logo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="397" y="2" width="152" height="16" forecolor="#000000" uuid="2c3c166c-e3d2-4148-98f1-08eab761742f"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="18" width="151" height="20" forecolor="#000000" uuid="ea274aee-aaab-4618-be68-e8d9da1a6f55"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="38" width="151" height="20" forecolor="#000000" uuid="2e3121ab-1af6-451e-9505-2393f72164e3"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company_website}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="78" width="151" height="20" forecolor="#000000" uuid="ae4ac530-cd8d-476f-aa2c-2f372f5df48d"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company_tp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="58" width="151" height="20" forecolor="#000000" uuid="72ba0869-3dfc-450f-b1e6-b4ee7bf224a7"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company_email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="185" y="35" width="154" height="20" uuid="fce7474d-b219-4d1f-9ad5-4826272d6ce0"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="15" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Good Receive Notice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="232" y="55" width="59" height="20" uuid="f9df768d-a275-46c3-8790-c726806a6fc8"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="15" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="12" width="49" height="20" backcolor="#66FFCC" uuid="bc1a2286-795b-45fd-b949-009d8b29c7dd"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[GRN ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="32" width="49" height="20" backcolor="#66FFCC" uuid="3b93106d-1f5d-4f66-8b5a-77e3c43fe33a"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="51" y="12" width="100" height="20" backcolor="#CCFFCC" uuid="5ef53dc9-d098-43de-bff5-d6d4a88cdb94"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grn_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="51" y="32" width="100" height="20" backcolor="#CCFFCC" uuid="34ed956f-f4e2-4265-9209-59cccb86a081"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grn_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="151" y="12" width="107" height="20" backcolor="#66FFCC" uuid="6d01f757-1535-4f89-82df-dee8b42949a4"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Supplier Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="151" y="32" width="107" height="20" backcolor="#66FFCC" uuid="3b9d8914-8519-49c8-9b55-dec165bc1302"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Supplier Company]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="258" y="12" width="166" height="20" backcolor="#CCFFCC" uuid="924dd2c9-30e0-4276-a195-444c58feee53"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sup_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="258" y="32" width="166" height="20" backcolor="#CCFFCC" uuid="3b9be426-9676-4c71-b3c6-fdff84beebb7"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sup_company}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="2" width="32" height="20" backcolor="#66FFCC" uuid="1f8a76e7-e640-43e7-93da-692a8507bfef"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="34" y="2" width="69" height="20" backcolor="#66FFCC" uuid="a120844e-c233-4f2b-bcf5-a9fe567c6442"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Product]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="103" y="2" width="80" height="20" backcolor="#66FFCC" uuid="f4d99f80-dedd-4153-9c66-1707207a2369"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="183" y="2" width="55" height="20" backcolor="#66FFCC" uuid="69af2d14-10cf-4d61-979a-a71684d9123d"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Exp Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="238" y="2" width="23" height="20" backcolor="#66FFCC" uuid="fd10fe21-b077-4a9c-a0dc-982d4b737529"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="261" y="2" width="59" height="20" backcolor="#66FFCC" uuid="0fe52f9e-5dd6-43b0-a330-8d5e011abf34"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Unit Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="320" y="2" width="25" height="20" backcolor="#66FFCC" uuid="30ed91ad-3691-40e5-8d35-2351fdd9ad45"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Dis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="345" y="2" width="25" height="20" backcolor="#66FFCC" uuid="21e7a91b-b85b-4b11-8e90-6588d5fb1835"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Tax]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="2" width="54" height="20" backcolor="#66FFCC" uuid="1a16242c-4c88-4ba2-8e7c-677339c7e47b"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[U.B Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="424" y="2" width="46" height="20" backcolor="#66FFCC" uuid="f87c11d8-25f7-4460-bdc6-33d7f31ec323"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[U.S Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="470" y="2" width="44" height="20" backcolor="#66FFCC" uuid="c5c25ea6-1bff-430d-b7a3-6157f6de3588"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Sub Tot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="514" y="2" width="40" height="20" backcolor="#66FFCC" uuid="e983e462-29bb-4538-be0b-c0ca91fbc578"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="345" y="0" width="25" height="20" backcolor="#CCFFCC" uuid="843ef49b-b3dc-4a0d-b9af-ce68af90c2b1"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="238" y="0" width="23" height="20" backcolor="#CCFFCC" uuid="92979101-bf1c-4758-9807-12185ce6c2e9"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="261" y="0" width="59" height="20" backcolor="#CCFFCC" uuid="7b733750-5a2b-4f49-80e3-658ec10a003b"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Unit Price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="34" y="0" width="69" height="20" backcolor="#CCFFCC" uuid="a671423b-f070-4b54-bcfd-e4de2e964dc9"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="8" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Product}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="424" y="0" width="46" height="20" backcolor="#CCFFCC" uuid="eca868f2-cb6e-4af7-9678-148c7465b0ea"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{U.S Price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="2" y="0" width="32" height="20" backcolor="#CCFFCC" uuid="6875f140-f8d2-47d4-af19-f480c387c6c6"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Stock ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="470" y="0" width="44" height="20" backcolor="#CCFFCC" uuid="7c93bb82-420f-4628-815e-fd7003ec9480"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Sub Tot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="370" y="0" width="54" height="20" backcolor="#CCFFCC" uuid="c9942c45-e720-49da-accb-8df89c5b7765"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{U.B Price}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Opaque" x="103" y="0" width="80" height="20" backcolor="#CCFFCC" uuid="825cd447-cc93-499e-af39-66b83a268690"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="6" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="183" y="0" width="55" height="20" backcolor="#CCFFCC" uuid="94b2d12b-3807-416f-a0b6-7dd77de5bc19"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Exp Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="320" y="0" width="25" height="20" backcolor="#CCFFCC" uuid="ccca986f-6ced-4de4-a931-963ecb18014b"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Dis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="514" y="0" width="41" height="20" backcolor="#CCFFCC" uuid="a7e170a7-0894-46e6-9f09-6de9b11fe887"/>
+				<box>
+					<pen lineWidth="0.15"/>
+					<topPen lineWidth="0.15"/>
+					<leftPen lineWidth="0.15"/>
+					<bottomPen lineWidth="0.15"/>
+					<rightPen lineWidth="0.15"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="563">
+			<staticText>
+				<reportElement mode="Opaque" x="424" y="16" width="54" height="20" backcolor="#66FFCC" uuid="7d27cedd-ee48-4918-986f-219d632ea00c"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Sub Tot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="424" y="36" width="54" height="20" backcolor="#66FFCC" uuid="752cd960-5156-49f9-82c8-906f828e9f86"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="424" y="56" width="54" height="20" backcolor="#66FFCC" uuid="ae9f3d9d-374d-4bf5-84de-5c2e4fc3ec60"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Tax]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="424" y="76" width="54" height="20" backcolor="#66FFCC" uuid="86f3ea25-d308-419a-b1e6-f5e02c0d49a7"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Net Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="424" y="96" width="54" height="20" backcolor="#66FFCC" uuid="d7519294-2fa8-425e-8b52-9a1f20e0a33e"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="424" y="116" width="54" height="20" backcolor="#66FFCC" uuid="1ffed829-24e8-44ff-a6dd-c28bf94541ed"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="424" y="136" width="54" height="20" backcolor="#66FFCC" uuid="f1ddde85-5df3-427f-b2df-5036c3cb2dcc"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI" size="10" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="478" y="16" width="68" height="20" backcolor="#CCFFCC" uuid="f491eac8-0519-458a-9bf9-5c21df88c39c"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grn_sub_tot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="478" y="36" width="68" height="20" backcolor="#CCFFCC" uuid="857e0705-6527-4ecc-bf48-4446115fcdc0"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grn_dis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="478" y="56" width="68" height="20" backcolor="#CCFFCC" uuid="b49afda3-2eb9-4226-873f-eae0f4e4b168"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grn_tax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="478" y="76" width="68" height="20" backcolor="#CCFFCC" uuid="3075ad2d-d4ab-4f01-8c39-a19b3599a67d"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grn_tot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="478" y="96" width="68" height="20" backcolor="#CCFFCC" uuid="3756d581-1fb8-4967-ac72-4cd6d12a5b6c"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grn_payment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="478" y="116" width="68" height="20" backcolor="#CCFFCC" uuid="a6e65d7f-2c80-4562-bee4-37ac7f1886b8"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grn_bal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="478" y="136" width="68" height="20" backcolor="#CCFFCC" uuid="47919c5b-748a-4756-99ff-5abcfdcbf553"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Nirmala UI"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grn_status}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="507" width="554" height="54" backcolor="#66FFCC" uuid="796361fe-516b-498e-8006-f6c2867610b9"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="62" y="521" width="151" height="20" forecolor="#000000" uuid="49a57d1b-618a-4933-8d3b-2b31cd3f6acf"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company_website}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="521" width="151" height="20" forecolor="#000000" uuid="8a543cc2-c611-47e7-8a4c-92744b65df5b"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="521" width="151" height="20" forecolor="#000000" uuid="c501eb42-60d8-4e1a-846a-73a408f196f3"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company_tp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="541" width="169" height="20" uuid="6ec6a892-9621-4000-9f07-e83eda6534df"/>
+				<textElement>
+					<font fontName="Nirmala UI" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Developed by www.technogensoftwares.com ]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

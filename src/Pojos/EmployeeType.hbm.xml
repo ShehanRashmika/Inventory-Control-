@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2018 10:52:25 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.EmployeeType" table="employee_type" catalog="inventorymanagement" optimistic-lock="version">
+        <id name="idemployeeType" type="java.lang.Integer">
+            <column name="idemployee_type" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="string">
+            <column name="type" length="45" />
+        </property>
+        <set name="employees" table="employee" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="employee_type_idemployee_type" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.Employee" />
+        </set>
+    </class>
+</hibernate-mapping>

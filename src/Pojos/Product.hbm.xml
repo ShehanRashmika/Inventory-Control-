@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2018 10:52:25 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.Product" table="product" catalog="inventorymanagement" optimistic-lock="version">
+        <id name="idproduct" type="string">
+            <column name="idproduct" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="productBrand" class="Pojos.ProductBrand" fetch="select">
+            <column name="product_brand_idproduct_brand" not-null="true" />
+        </many-to-one>
+        <many-to-one name="productType" class="Pojos.ProductType" fetch="select">
+            <column name="product_type_idproduct_type" not-null="true" />
+        </many-to-one>
+        <many-to-one name="unit" class="Pojos.Unit" fetch="select">
+            <column name="unit_idunit" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="itemType" type="string">
+            <column name="item_type" length="45" />
+        </property>
+        <property name="qr" type="string">
+            <column name="qr" length="65535" />
+        </property>
+        <property name="img" type="string">
+            <column name="img" length="65535" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="15" />
+        </property>
+        <set name="stocks" table="stock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="product_idproduct" length="100" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.Stock" />
+        </set>
+    </class>
+</hibernate-mapping>

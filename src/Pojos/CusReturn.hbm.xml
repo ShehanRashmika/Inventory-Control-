@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2018 10:52:25 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.CusReturn" table="cus_return" catalog="inventorymanagement" optimistic-lock="version">
+        <id name="idcusReturn" type="java.lang.Integer">
+            <column name="idcus_return" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="Pojos.Customer" fetch="select">
+            <column name="customer_idcustomer" not-null="true" />
+        </many-to-one>
+        <many-to-one name="invoiceHasItemsCus" class="Pojos.InvoiceHasItemsCus" fetch="select">
+            <column name="invoice_has_items_cus_idinvoice_has_items" not-null="true" />
+        </many-to-one>
+        <property name="date" type="date">
+            <column name="date" length="10" />
+        </property>
+        <property name="time" type="time">
+            <column name="time" length="8" />
+        </property>
+        <property name="reason" type="string">
+            <column name="reason" length="150" />
+        </property>
+        <property name="returnQty" type="java.lang.Double">
+            <column name="return_qty" precision="22" scale="0" />
+        </property>
+        <property name="returnPrice" type="java.lang.Double">
+            <column name="return_price" precision="22" scale="0" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="15" />
+        </property>
+    </class>
+</hibernate-mapping>

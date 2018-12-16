@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2018 10:52:25 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.InvoiceVen" table="invoice_ven" catalog="inventorymanagement" optimistic-lock="version">
+        <id name="idinvoiceVen" type="java.lang.Integer">
+            <column name="idinvoice_ven" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="vendor" class="Pojos.Vendor" fetch="select">
+            <column name="vendor_idvendor" not-null="true" />
+        </many-to-one>
+        <property name="date" type="date">
+            <column name="date" length="10" />
+        </property>
+        <property name="time" type="time">
+            <column name="time" length="8" />
+        </property>
+        <property name="dueDate" type="date">
+            <column name="due_date" length="10" />
+        </property>
+        <property name="dueTime" type="time">
+            <column name="due_time" length="8" />
+        </property>
+        <property name="subTot" type="java.lang.Double">
+            <column name="sub_tot" precision="22" scale="0" />
+        </property>
+        <property name="discount" type="java.lang.Double">
+            <column name="discount" precision="22" scale="0" />
+        </property>
+        <property name="tax" type="java.lang.Double">
+            <column name="tax" precision="22" scale="0" />
+        </property>
+        <property name="tot" type="java.lang.Double">
+            <column name="tot" precision="22" scale="0" />
+        </property>
+        <property name="payment" type="java.lang.Double">
+            <column name="payment" precision="22" scale="0" />
+        </property>
+        <property name="balance" type="java.lang.Double">
+            <column name="balance" precision="22" scale="0" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="15" />
+        </property>
+        <set name="invoiceHasItemsVens" table="invoice_has_items_ven" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="invoice_ven_idinvoice_ven" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.InvoiceHasItemsVen" />
+        </set>
+    </class>
+</hibernate-mapping>

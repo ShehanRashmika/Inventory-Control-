@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2018 10:52:25 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.SupAndVendorCompanyDetails" table="sup_and_vendor_company_details" catalog="inventorymanagement" optimistic-lock="version">
+        <id name="idsupAndVendorCompanyDetails" type="java.lang.Integer">
+            <column name="idsup_and_vendor_company_details" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="no" type="string">
+            <column name="no" length="45" />
+        </property>
+        <property name="street" type="string">
+            <column name="street" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="45" />
+        </property>
+        <property name="mobile1" type="java.lang.Integer">
+            <column name="mobile1" />
+        </property>
+        <property name="mobile2" type="java.lang.Integer">
+            <column name="mobile2" />
+        </property>
+        <property name="tp1" type="java.lang.Integer">
+            <column name="tp1" />
+        </property>
+        <property name="tp2" type="java.lang.Integer">
+            <column name="tp2" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="website" type="string">
+            <column name="website" length="100" />
+        </property>
+        <property name="regNo" type="string">
+            <column name="reg_no" length="45" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="150" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="15" />
+        </property>
+        <set name="vendors" table="vendor" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="sup_company_details_idcompany_details" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.Vendor" />
+        </set>
+        <set name="suppliers" table="supplier" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="sup_company_details_idcompany_details" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.Supplier" />
+        </set>
+    </class>
+</hibernate-mapping>

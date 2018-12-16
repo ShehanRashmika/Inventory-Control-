@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2018 10:52:25 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.Supplier" table="supplier" catalog="inventorymanagement" optimistic-lock="version">
+        <id name="idsupplier" type="java.lang.Integer">
+            <column name="idsupplier" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="supAndVendorCompanyDetails" class="Pojos.SupAndVendorCompanyDetails" fetch="select">
+            <column name="sup_company_details_idcompany_details" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="mobile" type="java.lang.Integer">
+            <column name="mobile" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="qr" type="string">
+            <column name="qr" length="65535" />
+        </property>
+        <property name="img" type="string">
+            <column name="img" length="65535" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="15" />
+        </property>
+        <set name="returnToSuppliers" table="return_to_supplier" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="supplier_idsupplier" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.ReturnToSupplier" />
+        </set>
+        <set name="grns" table="grn" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="supplier_idsupplier" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.Grn" />
+        </set>
+    </class>
+</hibernate-mapping>

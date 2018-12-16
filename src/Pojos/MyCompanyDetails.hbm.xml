@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2018 10:52:25 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.MyCompanyDetails" table="my_company_details" catalog="inventorymanagement" optimistic-lock="version">
+        <id name="idcompanyDetails" type="java.lang.Integer">
+            <column name="idcompany_details" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="no" type="string">
+            <column name="no" length="45" />
+        </property>
+        <property name="street" type="string">
+            <column name="street" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="45" />
+        </property>
+        <property name="mobile1" type="java.lang.Integer">
+            <column name="mobile1" />
+        </property>
+        <property name="mobile2" type="java.lang.Integer">
+            <column name="mobile2" />
+        </property>
+        <property name="tp1" type="java.lang.Integer">
+            <column name="tp1" />
+        </property>
+        <property name="tp2" type="java.lang.Integer">
+            <column name="tp2" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="website" type="string">
+            <column name="website" length="100" />
+        </property>
+        <property name="regNo" type="string">
+            <column name="reg_no" length="45" />
+        </property>
+        <property name="heading1" type="string">
+            <column name="heading1" length="150" />
+        </property>
+        <property name="heading2" type="string">
+            <column name="heading2" length="150" />
+        </property>
+        <property name="heading3" type="string">
+            <column name="heading3" length="150" />
+        </property>
+        <property name="img1" type="string">
+            <column name="img1" length="65535" />
+        </property>
+        <property name="img2" type="string">
+            <column name="img2" length="65535" />
+        </property>
+        <property name="img3" type="string">
+            <column name="img3" length="65535" />
+        </property>
+        <property name="useEmail" type="string">
+            <column name="use_email" length="15" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="15" />
+        </property>
+        <set name="employees" table="employee" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="my_company_details_idcompany_details" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.Employee" />
+        </set>
+    </class>
+</hibernate-mapping>

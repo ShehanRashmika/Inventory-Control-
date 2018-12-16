@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2018 10:52:25 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.InvoiceHasItemsCus" table="invoice_has_items_cus" catalog="inventorymanagement" optimistic-lock="version">
+        <id name="idinvoiceHasItems" type="java.lang.Integer">
+            <column name="idinvoice_has_items" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="invoiceCus" class="Pojos.InvoiceCus" fetch="select">
+            <column name="invoice_idinvoice" not-null="true" />
+        </many-to-one>
+        <many-to-one name="stock" class="Pojos.Stock" fetch="select">
+            <column name="stock_idstock" not-null="true" />
+        </many-to-one>
+        <property name="date" type="date">
+            <column name="date" length="10" />
+        </property>
+        <property name="time" type="time">
+            <column name="time" length="8" />
+        </property>
+        <property name="qty" type="java.lang.Double">
+            <column name="qty" precision="22" scale="0" />
+        </property>
+        <property name="subTot" type="java.lang.Double">
+            <column name="sub_tot" precision="22" scale="0" />
+        </property>
+        <property name="discount" type="java.lang.Double">
+            <column name="discount" precision="22" scale="0" />
+        </property>
+        <property name="tax" type="java.lang.Double">
+            <column name="tax" precision="22" scale="0" />
+        </property>
+        <property name="tot" type="java.lang.Double">
+            <column name="tot" precision="22" scale="0" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="15" />
+        </property>
+        <set name="cusReturns" table="cus_return" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="invoice_has_items_cus_idinvoice_has_items" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.CusReturn" />
+        </set>
+    </class>
+</hibernate-mapping>
